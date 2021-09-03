@@ -8,7 +8,7 @@ Human cytomegalovirus (HCMV) infects 40-100% of the human population globally an
 
 
 # Requirements
-## Tools
+### Tools
 - 1.Bash (Ubuntu, version 18.04)
 - 2.Perl [https://www.perl.org](https://www.perl.org/)
 - 3.Java [https://javadl.oracle.com](https://javadl.oracle.com/)
@@ -21,7 +21,7 @@ Human cytomegalovirus (HCMV) infects 40-100% of the human population globally an
 
 # Data preparation
 
-##  Download RNA_seq data (HCMV HAN strain infected HELF cells at 72 hours post-infection ,PRJNA644588) from ebi [https://www.ebi.ac.uk/ena/browser/view/PRJNA577553](https://www.ebi.ac.uk/ena/browser/view/PRJNA577553)
+###  Download RNA_seq data (HCMV HAN strain infected HELF cells at 72 hours post-infection ,PRJNA644588) from ebi [https://www.ebi.ac.uk/ena/browser/view/PRJNA577553](https://www.ebi.ac.uk/ena/browser/view/PRJNA577553)
 
 
 ```Shell
@@ -33,7 +33,7 @@ ascp -QT -l 300m -P33001 \
 era-fasp@fasp.sra.ebi.ac.uk:/${i} .
 done
 ```
-## multi-threading to speed up the extraction of fastq from SRA-accessions
+### multi-threading to speed up the extraction of fastq from SRA-accessions
 
 ```Shell
 for i in your_SRR*_id
@@ -44,14 +44,14 @@ done
 rm SRR*
 ```
 
-## Generating genome contained human and HCMV(HAN)
+### Generating genome contained human and HCMV(HAN)
 
 ```Shell
 cat hg19.fa KJ426589.1.fasta > hg19_HAN.fa
 cat hg19.gtf KJ426589.1.gtf > hg19_HAN.gtf
 ```
 
-## Build  BWA index
+### Build  BWA index
 
 ```Shell
 bwa index hg19_HAN.fa
@@ -104,7 +104,7 @@ done
 
 # running statistics pipeline
 
-## mapping statistics
+### mapping statistics
 
 ```Shell
 for i in SRR10277187
@@ -117,7 +117,7 @@ qualimap bamqc -bam ${i}_output/${i}_sorted.bam -oc count.matrix -outdir ${i}_ou
 rm ${i}_output/${i}.bam
 done
 ```
-## genome coverage statistics
+### genome coverage statistics
 
 ```Shell
 for i in SRR10277187
