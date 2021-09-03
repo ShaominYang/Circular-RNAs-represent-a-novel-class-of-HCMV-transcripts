@@ -48,7 +48,7 @@ done
 ```Shell
 rm SRR*
 ```
-## Generating genome contained African green monkey and SARS-CoV-2
+## Generating genome contained human and HCMV(HAN)
 
 ```Shell
 cat hg19.fa KJ426589.1.fasta > hg19_HAN.fa
