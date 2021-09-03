@@ -19,6 +19,7 @@ Human cytomegalovirus (HCMV) infects 40-100% of the human population globally an
 - 7.aspera [https://www.ibm.com/products/aspera](https://www.ibm.com/products/aspera/)
 - 8.ViReMa [https://sourceforge.net/projects/virema/](https://sourceforge.net/projects/virema/)
 
+# Data preparation
 
 ##  Download RNA_seq data (HCMV HAN strain infected HELF cells at 72 hours post-infection ,PRJNA644588) from ebi [https://www.ebi.ac.uk/ena/browser/view/PRJNA577553](https://www.ebi.ac.uk/ena/browser/view/PRJNA577553)
 
@@ -58,7 +59,7 @@ cat hg19.gtf KJ426589.1.gtf > hg19_HAN.gtf
 bwa index hg19_HAN.fa
 ```
 
-## running CIRI2 and circ-full pipeline
+# running CIRI2 and circ-full pipeline
   
 ```Shell
 
@@ -82,29 +83,6 @@ echo ${i}_CircRNA_full_finished
 done
   
 ```
-# running mapping statistics pipeline
-
-```Shell
-for i in SRR10277187
-do
-echo $i
-samtools view -bS ${i}_output/${i}.sam > ${i}_output/${i}.bam
-rm ${i}_output/${i}.sam
-samtools sort ${i}_output/${i}.bam -o ${i}_output/${i}_sorted.bam -@ 42
-qualimap bamqc -bam ${i}_output/${i}_sorted.bam -oc count.matrix -outdir ${i}_output/${i}_bamqc -outformat PDF:HTML --java-mem-size=50G
-rm ${i}_output/${i}.bam
-done
-```
-# running genome coverage statistics pipeline
-
-```Shell
-for i in SRR10277187
-do
-samtools index -b ${i}_output/${i}_sort.bam ${i}_output/${i}_sort.bam.bai
-samtools idxstats ${i}_output/${i}_sort.bam
-samtools depth -a -m 0 ${i}_output/${i}_sort.bam > ${i}_output/${i}_coverage.txt
-done
-```
 
 # running ViReMa pipeline
 
@@ -120,6 +98,32 @@ cat trim_galore_out_dir/${i}_1_val_1.fq.gz trim_galore_out_dir/${i}_2_val_2.fq.g
 python2 ViReMa.py VZV_HSV1.fasta trim_galore_out_dir/${i}.fq.gz ${i}.sam --Output_Dir ${i}_virema/ --Output_Tag ${i} -BED --p 50 --MicroInDel_Length 5 --Defuzz 0 -FuzzEntry
 done
 
+```
+
+# running statistics pipeline
+
+## mapping statistics
+
+```Shell
+for i in SRR10277187
+do
+echo $i
+samtools view -bS ${i}_output/${i}.sam > ${i}_output/${i}.bam
+rm ${i}_output/${i}.sam
+samtools sort ${i}_output/${i}.bam -o ${i}_output/${i}_sorted.bam -@ 42
+qualimap bamqc -bam ${i}_output/${i}_sorted.bam -oc count.matrix -outdir ${i}_output/${i}_bamqc -outformat PDF:HTML --java-mem-size=50G
+rm ${i}_output/${i}.bam
+done
+```
+## genome coverage statistics
+
+```Shell
+for i in SRR10277187
+do
+samtools index -b ${i}_output/${i}_sort.bam ${i}_output/${i}_sort.bam.bai
+samtools idxstats ${i}_output/${i}_sort.bam
+samtools depth -a -m 0 ${i}_output/${i}_sort.bam > ${i}_output/${i}_coverage.txt
+done
 ```
 
 
