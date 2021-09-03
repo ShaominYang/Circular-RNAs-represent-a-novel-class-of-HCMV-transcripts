@@ -40,14 +40,9 @@ do
 fasterq-dump ${i} -3 -e 16 -p
 echo ${i}
 done
-
-```
-
-## remove all SRR files
-
-```Shell
 rm SRR*
 ```
+
 ## Generating genome contained human and HCMV(HAN)
 
 ```Shell
@@ -75,7 +70,7 @@ echo $i
 mkdir ${i}_output
 bwa mem -t 52 hg19_HAN.fa ${i}_1.fastq.gz ${i}_2.fastq.gz >${i}_output/${i}.sam
 perl ~/CIRI2/CIRI_v2.0.6/CIRI2.pl -I ${i}_output/${i}.sam -O ${i}_output/${i}.ciri -F hg19_HAN.fa -A hg19_HAN.gtf -T 24
-## Reconstructed SARS-CoV-2 circRNAs circ-full
+## Reconstructed HCMV circRNAs circ-full
 perl ~/CIRI2/CIRI_AS/CIRI_AS_v1.2.pl -S ${i}_output/${i}.sam -C ${i}_output/${i}.ciri -F hg19_HAN.fa -A hg19_HAN.gtf -O ${i}_output/${i} -D yes
 java -jar ~/CIRI2/CIRI-full_v2.0/CIRI-full.jar RO1 -1 ${i}_1.fastq.gz -2 ${i}_2.fastq.gz -o ${i}_output/${i}
 bwa mem -t 52 hg19_HAN.fa ${i}_output/${i}_ro1.fq > ${i}_output/${i}_ro1.sam
@@ -111,7 +106,7 @@ samtools depth -a -m 0 ${i}_output/${i}_sort.bam > ${i}_output/${i}_coverage.txt
 done
 ```
 
-# running genome ViReMa pipeline
+# running ViReMa pipeline
 
 ```Shell
 
