@@ -21,9 +21,12 @@ Human cytomegalovirus (HCMV) infects 40-100% of the human population globally an
 
 # Data preparation
 
-###  Download RNA_seq data (HCMV HAN strain infected HELF cells at 72 hours post-infection ,PRJNA644588) from ebi [https://www.ebi.ac.uk/ena/browser/view/PRJNA577553](https://www.ebi.ac.uk/ena/browser/view/PRJNA577553)
-
-
+###  Download RNA_seq data from ebi 
+- 1.HCMV HAN strain infected HELF cells at 72 hours post-infection (PRJNA644588) [https://www.ebi.ac.uk/ena/browser/view/PRJNA577553](https://www.ebi.ac.uk/ena/browser/view/PRJNA577553)
+- 2.HCMV TB40/E strain infected primary fibroblasts (HFF), endothelial cells (EC), and neural progenitors (NPCs) derived from embryonic stem cells at 48 hpi and 96 hpi (PRJNA299678)
+- 3.KSHV BCBL1 strain infected B-cell lymphoma cells with RNase R-treatment (PRJNA483204)
+- 4.EBV Akata strain infected B-cell lymphoma cells with RNase R-treatment (PRJNA479852)
+ 
 ```Shell
 for i in vol1/fastq/SRR102/087/SRR10277187/SRR10277187_1.fastq.gz vol1/fastq/SRR102/087/SRR10277187/SRR10277187_2.fastq.gz
 do
