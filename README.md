@@ -50,8 +50,6 @@ rm SRR*
 cat hg19.fa KJ426589.1.fasta > hg19_HAN.fa
 cat hg19.gtf KJ426589.1.gtf > hg19_HAN.gtf
 ```
-![image](https://github.com/ShaominYang/Circular-RNAs-represent-a-novel-class-of-HCMV-transcripts/blob/main/Illustration.jpg)
-### <p align="center"> Illustration of CIRI2-based identification of circRNAs </p>
 
 ## Build  BWA index
 
@@ -60,6 +58,10 @@ bwa index hg19_HAN.fa
 ```
 
 # running CIRI2 and circ-full pipeline
+
+![image](https://github.com/ShaominYang/Circular-RNAs-represent-a-novel-class-of-HCMV-transcripts/blob/main/Illustration.jpg)
+### <p align="center"> Illustration of CIRI2-based identification of circRNAs </p>
+
   
 ```Shell
 
