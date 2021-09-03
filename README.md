@@ -9,7 +9,7 @@ Human cytomegalovirus (HCMV) infects 40-100% of the human population globally an
 
 # Requirements
 
-### Computer Platform
+### Computer
 
 Two Intel W-3175X CPUs with 128 GB memory running Ubuntu system (version 18.04)
 
