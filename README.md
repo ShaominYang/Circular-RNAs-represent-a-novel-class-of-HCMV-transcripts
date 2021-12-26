@@ -93,7 +93,21 @@ echo ${i}_CircRNA_full_finished
 done
   
 ```
+# running ViReMa pipeline
 
+```Shell
+
+bowtie-build KJ426589.1.fasta KJ426589.1.fasta
+
+for i in SRR10277187
+do
+trim_galore --phred33 --gzip --trim-n -o trim_galore_out_dir --paired ${i}_1.fastq.gz ${i}_2.fastq.gz
+echo ${i}_trim_galore
+cat trim_galore_out_dir/${i}_1_val_1.fq.gz trim_galore_out_dir/${i}_2_val_2.fq.gz > ${i}.fq.gz
+python2 ViReMa.py VZV_HSV1.fasta trim_galore_out_dir/${i}.fq.gz ${i}.sam --Output_Dir ${i}_virema/ --Output_Tag ${i} -BED --p 50 --MicroInDel_Length 5 --Defuzz 0 -FuzzEntry
+done
+
+```
 
 # running statistics pipeline
 
