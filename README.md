@@ -139,8 +139,9 @@ done
 # Citations
 
 
->1.  Yang S, Zhou H, Cruz-Cosme R, Liu M, Xu J, Niu X, Li Y, Xiao L, Wang Q, Zhu H, Tang Q. Circular RNA profiling reveals abundant and diverse circRNAs of SARS-CoV-2, SARS-CoV and MERS-CoV origin. bioRxiv [Preprint]. 2020 Dec 8:2020.12.07.415422. doi: 10.1101/2020.12.07.415422. PMID: 33330860; PMCID: PMC7743059.
->2.  Yuan Gao†, Jinfeng Wang† and Fangqing Zhao*. CIRI: an efficient and unbiased algorithm for de novo circular RNA identification. Genome Biology (2015) 16:4.
->3.  Yuan Gao, Jinyang Zhang and Fangqing Zhao*. Circular RNA identification based on multiple seed matching. Briefings in Bioinformatics (2017) DOI: 10.1093/bib/bbx014.
->4.  Routh A, Johnson JE. Discovery of functional genomic motifs in viruses with ViReMa-a Virus Recombination Mapper-for analysis of next-generation sequencing data. Nucleic Acids Res. 2014 Jan;42(2):e11. doi: 10.1093/nar/gkt916. Epub 2013 Oct 16. PMID: 24137010; PMCID: PMC3902915.
+>1.  Yang S, Liu X, Wang M, Cao D, Jaijyan DK, Enescu N, Liu J, Wu S, Wang S, Sun W, Xiao L, Gu A, Li Y, Zhou H, Tyagi S, Wu J, Tang Q, Zhu H. Circular RNAs Represent a Novel Class of Human Cytomegalovirus Transcripts. Microbiol Spectr. 2022 May 23:e0110622. doi: 10.1128/spectrum.01106-22. Epub ahead of print. PMID: 35604147.
+>2.  Yang S, Zhou H, Liu M, et al. SARSCoV‐2, SARS‐CoV, and MERS‐CoV encode circular RNAs of spliceosome‐independent origin. J Med Virol. 2022;1‐20. doi:10.1002/jmv.27734
+>3.  Yuan Gao†, Jinfeng Wang† and Fangqing Zhao*. CIRI: an efficient and unbiased algorithm for de novo circular RNA identification. Genome Biology (2015) 16:4.
+>4.  Yuan Gao, Jinyang Zhang and Fangqing Zhao*. Circular RNA identification based on multiple seed matching. Briefings in Bioinformatics (2017) DOI: 10.1093/bib/bbx014.
+>5.  Routh A, Johnson JE. Discovery of functional genomic motifs in viruses with ViReMa-a Virus Recombination Mapper-for analysis of next-generation sequencing data. Nucleic Acids Res. 2014 Jan;42(2):e11. doi: 10.1093/nar/gkt916. Epub 2013 Oct 16. PMID: 24137010; PMCID: PMC3902915.
 
